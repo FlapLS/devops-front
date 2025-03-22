@@ -1,9 +1,9 @@
 <template>
   <div class="product-list">
     <h2 class="title">Список красок</h2>
-    <!--<button class="create-button" @click="goToCreate">
+    <button class="create-button" @click="goToCreate">
       <span>➕</span> Создать новую краску
-    </button>-->
+    </button>
     <div v-if="loading" class="loading">Загрузка...</div>
     <div v-else>
       <div v-if="products.length === 0" class="empty-list">
