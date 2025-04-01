@@ -132,13 +132,11 @@ export default {
       }
     },
     updateColor(event) {
-      // Обновляем значение codeColor при изменении цвета через пикер
       this.product.codeColor = event.target.value;
     },
     validateForm() {
-      this.errors = {}; // Очищаем предыдущие ошибки
+      this.errors = {};
 
-      // Проверка на пустые поля и null
       if (!this.product.name || this.product.name === null) this.errors.name = true;
       if (this.product.amount === null || this.product.amount === '') this.errors.amount = true;
       if (this.product.actualAmount === null || this.product.actualAmount === '') this.errors.actualAmount = true;
@@ -147,13 +145,13 @@ export default {
       if (!this.product.article || this.product.article === null) this.errors.article = true;
       if (!this.product.codeColor || this.product.codeColor === null) this.errors.codeColor = true;
 
-      // Проверка на корректность кода цвета (HEX)
+
       const hexColorRegex = /^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$/;
       if (this.product.codeColor && !hexColorRegex.test(this.product.codeColor)) {
         this.errors.codeColor = 'Код цвета должен быть в формате HEX (например, #FF0000).';
       }
 
-      // Проверка, что количество и фактическое количество не отрицательные
+
       if (this.product.amount < 0) {
         this.errors.amount = 'Количество не может быть отрицательным.';
       }
@@ -161,12 +159,12 @@ export default {
         this.errors.actualAmount = 'Фактическое количество не может быть отрицательным.';
       }
 
-      // Проверка, что фактическое количество не больше количества
+
       if (this.product.actualAmount > this.product.amount) {
         this.errors.actualAmount = 'Фактическое количество не может быть больше количества.';
       }
 
-      // Если есть ошибки, возвращаем false
+
       return Object.keys(this.errors).length === 0;
     },
     async submitForm() {

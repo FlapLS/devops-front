@@ -74,7 +74,7 @@ export default {
     formatDate(dateString) {
       if (!dateString) return 'Не указано';
       const date = new Date(dateString);
-      return date.toLocaleString(); // Форматируем дату в удобный формат
+      return date.toLocaleString();
     },
     goBack() {
       this.$router.push('/products');
@@ -120,11 +120,11 @@ export default {
   align-items: center;
   margin-bottom: 15px;
   padding-bottom: 15px;
-  border-bottom: 1px solid #eee; /* Разделительная линия между полями */
+  border-bottom: 1px solid #eee;
 }
 
 .field:last-child {
-  border-bottom: none; /* Убираем линию у последнего поля */
+  border-bottom: none;
   margin-bottom: 0;
   padding-bottom: 0;
 }
@@ -132,25 +132,25 @@ export default {
 .field strong {
   color: #2c3e50;
   font-weight: 600;
-  min-width: 180px; /* Фиксированная ширина для названий полей */
-  text-align: left; /* Выравниваем переменные по левому краю */
+  min-width: 180px;
+  text-align: left;
 }
 
 .field .value {
   color: #333;
   flex-grow: 1;
-  text-align: center; /* Выравниваем значения по центру */
+  text-align: center;
 }
 
 .color-label {
-  display: block; /* Делаем блок, чтобы занимал всю ширину */
-  width: 100%; /* Занимает всю доступную ширину */
+  display: block;
+  width: 100%;
   padding: 6px 12px;
   border-radius: 6px;
   color: white;
   font-weight: bold;
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
-  text-align: center; /* Выравниваем текст по центру */
+  text-align: center;
 }
 
 .loading {

@@ -22,10 +22,10 @@ describe('ProductDetails.vue', () => {
   };
 
   beforeEach(async () => {
-    // Мокируем запрос к API
+
     axios.get.mockResolvedValue({ data: mockProduct });
 
-    // Монтируем компонент с моком $route
+
     wrapper = mount(ProductDetails, {
       global: {
         mocks: {
@@ -41,12 +41,12 @@ describe('ProductDetails.vue', () => {
       },
     });
 
-    // Ждём завершения асинхронных операций
+
     await wrapper.vm.$nextTick();
   });
 
   afterEach(() => {
-    vi.clearAllMocks(); // Очищаем моки после каждого теста
+    vi.clearAllMocks();
   });
 
   it('загружает данные продукта при монтировании', async () => {
@@ -87,7 +87,7 @@ describe('ProductDetails.vue', () => {
   });
 
   it('отображает сообщение о загрузке, если данные не загружены', async () => {
-    // Монтируем компонент без данных
+
     const emptyWrapper = mount(ProductDetails, {
       global: {
         mocks: {

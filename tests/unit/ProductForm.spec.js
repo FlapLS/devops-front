@@ -70,12 +70,12 @@ describe('ProductForm.vue', () => {
       codeColor: '#ff0000',
     });
 
-    // Проверяем сообщение об успешном обновлении
+
     expect(wrapper.vm.message).toBe('Продукт успешно обновлен!');
   });
 
   it('загружает данные продукта при монтировании в режиме редактирования', async () => {
-    await wrapper.vm.$nextTick(); // Ждём завершения асинхронных операций
+    await wrapper.vm.$nextTick();
     expect(axios.get).toHaveBeenCalledWith(`http://localhost:8080/products/1`);
     expect(wrapper.vm.product).toEqual(mockProduct);
   });
@@ -167,7 +167,7 @@ describe('ProductForm.vue', () => {
         },
       },
       props: {
-        isEdit: false, // Режим создания
+        isEdit: false,
       },
     });
 

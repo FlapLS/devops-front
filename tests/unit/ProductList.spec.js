@@ -4,7 +4,7 @@ import axios from 'axios';
 import { API_BASE_URL } from '@/apiConfig';
 import { describe, it, expect, beforeEach, afterEach, vi } from 'vitest'; // Импорт глобальных функций
 
-vi.mock('axios'); // Мокируем axios
+vi.mock('axios');
 
 describe('ProductList.vue', () => {
   let wrapper;
@@ -63,8 +63,8 @@ describe('ProductList.vue', () => {
   });
 
   it('отображает заголовок "Список красок"', async () => {
-    expect(wrapper.vm.loading).toBe(false); // Проверяем, что загрузка завершена
-    expect(wrapper.vm.products.length).toBeGreaterThan(0); // Проверяем, что данные загружены
+    expect(wrapper.vm.loading).toBe(false);
+    expect(wrapper.vm.products.length).toBeGreaterThan(0);
     expect(wrapper.find('.title').text()).toBe('Список красок');
   });
 
@@ -102,7 +102,7 @@ describe('ProductList.vue', () => {
     await wrapper.find('.delete-button').trigger('click');
     await wrapper.vm.$nextTick();
     expect(axios.delete).toHaveBeenCalledWith(`${API_BASE_URL}/products/1`);
-    expect(axios.get).toHaveBeenCalledTimes(2); // Первый вызов в created, второй после удаления
+    expect(axios.get).toHaveBeenCalledTimes(2);
   });
 
 });

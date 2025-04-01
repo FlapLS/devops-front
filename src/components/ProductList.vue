@@ -149,8 +149,8 @@ export default {
 .product-table th,
 .product-table td {
   padding: 12px;
-  text-align: center; /* Центрирование текста по горизонтали */
-  vertical-align: middle; /* Центрирование текста по вертикали */
+  text-align: center;
+  vertical-align: middle;
   border-bottom: 1px solid #e0e0e0;
 }
 
@@ -168,13 +168,13 @@ export default {
   height: 30px;
   border: 1px solid #ccc;
   border-radius: 4px;
-  margin: 0 auto; /* Центрирование блока с цветом */
+  margin: 0 auto;
 }
 
 .actions {
   display: flex;
   gap: 10px;
-  justify-content: center; /* Центрирование кнопок действий */
+  justify-content: center;
 }
 
 .action-button {
