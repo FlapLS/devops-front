@@ -124,7 +124,7 @@ export default {
   methods: {
     async fetchProduct(id) {
       try {
-        const response = await axios.get(`http://localhost:8080/products/${id}`);
+        const response = await axios.get(`${API_BASE_URL}/products/${id}`);
         this.product = response.data;
       } catch (error) {
         this.message = 'Ошибка при загрузке продукта: ' + error.message;
